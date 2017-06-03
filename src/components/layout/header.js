@@ -5,15 +5,12 @@ class Header extends Component {
   render() {
   	const title = '{ CSS }'
     return (
-      <section className="hero is-fullheight is-header is-bold">
-			  <div className="hero-body">
-			    <div className="container">
+      <section className="hero is-fullheight is-layout">
+				<div className="hero-body">
+			    <div className="container has-text-centered">
 			      <h1 className="title">
-			        { title }
+			        Layout
 			      </h1>
-			      <h2 className="subtitle">
-			        Guideline
-			      </h2>
 			    </div>
 			  </div>
 			</section>
