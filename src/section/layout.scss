@@ -1,0 +1,63 @@
+.is-layout {
+
+	background: url(/assets/images/bg-blue-blueprint.jpg);
+
+	.title {
+		color: $white;
+		font-size: 8em;
+		text-align: center;
+	}
+}
+
+.browser-container {
+	width: 100%;
+	min-height: 76vh;
+	background-color: $white;
+	border: 1px solid #DDD;
+	position: relative;
+
+	.browser-header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: #F5F5F5;
+		min-height: 4vh;
+		@include flex($align: center);
+		padding: 0 0.5em;
+
+		.circle {
+			margin-left: 5px;
+			width: 10px;
+			height: 10px;
+			background-color: #DDD;
+			border-radius: 50%;
+			display: block;
+
+		}
+	}
+
+	.browser {
+		position: relative;
+		width: 100%;
+		padding-top: 4vh;
+		height: 50vh;
+	}
+
+	pre {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+
+		.hljs {
+			padding: 0.6em 1em;
+			min-height: 22vh;
+		}
+	}
+
+}
+
+
+@import './layout/box-model';
+@import './layout/box-sizing';

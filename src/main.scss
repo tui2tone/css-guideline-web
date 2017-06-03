@@ -1,0 +1,38 @@
+body {
+	background-color: #DDD;
+}
+
+* {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.title {
+	font-size: 5em;
+	margin-bottom: 0.8em !important;
+}
+
+.subtitle {
+	font-size: 2.2em;
+}
+
+.list {
+	list-style: circle;
+	margin-left: 2.2em;
+
+	& > li {
+		font-size: 2.2em;
+	}
+}
+
+.hljs {
+	font-size: 1.5em;
+}
+
+.action {
+	h4 {
+		display: block;
+		border-bottom: 1px solid #DDD;
+		margin-bottom: 0.6em;
+		text-transform: uppercase;
+	}
+}
