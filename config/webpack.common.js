@@ -31,6 +31,10 @@ module.exports = {
         test: /\.scss$/,
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('css!sass')
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('css')
       }
     ]
   },

@@ -16,7 +16,7 @@ body {
 }
 
 .list {
-	list-style: circle;
+	list-style: disc;
 	margin-left: 2.2em;
 
 	& > li {
@@ -29,10 +29,25 @@ body {
 }
 
 .action {
+	margin-top: 8em;
 	h4 {
 		display: block;
 		border-bottom: 1px solid #DDD;
 		margin-bottom: 0.6em;
 		text-transform: uppercase;
+	}
+
+	button {
+		margin-right: 6px;
+		padding: 0.8em 1.2em;
+		font-size: 1em;
+		height: auto !important; 
+		margin-bottom: 6px;
+		&.is-active {
+			background-color: #2ba84a;
+			border: 1px solid #2ba84a;
+			color: $white;
+			box-shadow: none;
+		}
 	}
 }

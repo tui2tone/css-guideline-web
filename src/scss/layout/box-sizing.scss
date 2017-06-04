@@ -3,9 +3,31 @@
 	.box-model {
 		
 		background-color: rgba(#eef0f2, 1);
-		margin: 20px;
-		padding: 20px;
-		border: 1px solid #999;
 		width: 100%;
+
+		.space {
+			background-color: #FEA301;
+			text-align: center;
+			font-size: 0;
+			padding: 10px;
+			color: $white;
+			font-size: 2em;
+		}
+
+		&.is-margin {
+			margin: 20px;
+		}
+
+		&.is-padding {
+			padding: 20px;
+		}
+
+		&.is-border {
+			border: 5px solid #999;
+		}
+
+		&.is-content-box {
+			box-sizing: content-box;
+		}
 	}
 }

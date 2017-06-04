@@ -1,8 +1,73 @@
 import React, { Component } from 'react';
+import Highlight from 'react-highlight';
+import cx from 'classnames';
 
 class BoxSizing extends Component {
 
+	constructor(props) {
+		super(props);
+		
+		this.state = {
+			margin: false,
+			padding: false,
+			border: false,
+			mode: 'border-box'
+		}	
+
+		this.onToggle = this.onToggle.bind(this)
+		this.onToggleMargin = this.onToggleMargin.bind(this)
+		this.onTogglePadding = this.onTogglePadding.bind(this)
+		this.onToggleBorder = this.onToggleBorder.bind(this)
+		this.onToggleContentBox = this.onToggleContentBox.bind(this)
+		this.onToggleBorderBox = this.onToggleBorderBox.bind(this)
+	}
+
+	onToggle(key) {
+		this.setState({ [key]: !this.state[key] })
+	}
+
+	onToggleMargin() {
+		this.onToggle('margin')
+	}
+
+	onTogglePadding() {
+		this.onToggle('padding')
+	}
+
+	onToggleBorder() {
+		this.onToggle('border')
+	}
+
+	onToggleContentBox() {
+		this.setState({ mode: 'content-box' })
+	}
+
+	onToggleBorderBox() {
+		this.setState({ mode: 'border-box' })
+	}
+
 	render() {
+		const { margin, padding, border, mode } = this.state
+		const marginClass = cx('button', { 'is-active': margin })
+		const paddingClass = cx('button', { 'is-active': padding })
+		const borderClass = cx('button', { 'is-active': border })
+		const borderBoxClass = cx('button', { 'is-active':  mode == 'border-box' })
+		const contentBoxClass = cx('button', { 'is-active':  mode == 'content-box' })
+		const boxClass = cx('box-model', { 'is-margin': margin, 'is-padding': padding, 'is-border': border, 'is-content-box': mode == 'content-box' })
+		let content = 'box-sizing: ' + mode + ';\nwidth: 100%;'
+
+		if(margin) {
+			content += '\nmargin: 20px;'
+		}
+
+		if(padding) {
+			content += '\npadding: 20px;'
+		}
+
+		if(border) {
+			content += '\nborder: 5px solid #999;'
+		}
+
 		return (
 			<section className="hero is-fullheight is-box-sizing">
 			  <div className="hero-body">
@@ -15,11 +80,21 @@ class BoxSizing extends Component {
 					      <h1 className="subtitle">
 					        Tell browser how to calculate size of box model
 					      </h1>
+								<ul className="list">
+									<li>content-box</li>
+									<li>border-box</li>
+								</ul>
 					     	<div className="action">
 				     			<h4>Action</h4>
-									<button className="button is-small">Margin</button>
-									<button className="button is-small">Pargin</button>
-									<button className="button is-small">Border</button>
+				     			<div>
+										<button className={contentBoxClass} onClick={this.onToggleContentBox}>Set "content-box"</button>
+										<button className={borderBoxClass} onClick={this.onToggleBorderBox}>Set "border-box"</button>
+									</div>
+				     			<div>
+										<button className={marginClass} onClick={this.onToggleMargin}>Set Margin</button>
+										<button className={paddingClass} onClick={this.onTogglePadding}>Set Pargin</button>
+										<button className={borderClass} onClick={this.onToggleBorder}>Set Border</button>
+									</div>
 					     	</div>
 					    </div>
 				  		<div className="column is-text-centered">
@@ -30,11 +105,13 @@ class BoxSizing extends Component {
 				  					<div className="circle"></div>
 				  				</div>
 				  				<div className="browser">
-						  			<div className="box-model">
-						  				Box
+						  			<div className={boxClass}>
+						  				<div className="space">Space</div>
 						  			</div>
 				  				</div>
-					      	<pre><code className="css">box-sizing: content-box;</code></pre>
+					      	<Highlight className="css">
+					      		{ content }
+					      	</Highlight>
 				  			</div>
 				  		</div>
 					  </div>

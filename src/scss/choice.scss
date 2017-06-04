@@ -1,0 +1,15 @@
+.choices-container {
+	font-size: 2em;
+
+	.choice {
+
+		label {
+			& > div {
+				margin-right: 10px;
+			}
+		}
+		input {
+			margin-right: 10px;
+		}
+	}
+}
