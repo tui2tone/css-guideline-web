@@ -42,6 +42,7 @@
 		width: 100%;
 		padding-top: 4vh;
 		height: 50vh;
+		overflow: scroll;
 	}
 
 	pre {
@@ -62,3 +63,4 @@
 @import './box-model';
 @import './box-sizing';
 @import './position';
+@import './display';

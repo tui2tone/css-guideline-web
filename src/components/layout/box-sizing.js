@@ -78,22 +78,37 @@ class BoxSizing extends Component {
 					        Box Sizing
 					      </h1>
 					      <h1 className="subtitle">
-					        Tell browser how to calculate size of box model
+					        How to calculate size of box model
 					      </h1>
 								<ul className="list">
 									<li>content-box</li>
 									<li>border-box</li>
 								</ul>
 					     	<div className="action">
-				     			<h4>Action</h4>
-				     			<div>
-										<button className={contentBoxClass} onClick={this.onToggleContentBox}>Set "content-box"</button>
-										<button className={borderBoxClass} onClick={this.onToggleBorderBox}>Set "border-box"</button>
+									<div className="field has-addons">
+									  <p className="control is-label">
+									  	Box-Sizing:
+									  </p>
+									  <p className="control">
+											<button className={contentBoxClass} onClick={this.onToggleContentBox}>content-box</button>
+										</p>
+									  <p className="control">
+											<button className={borderBoxClass} onClick={this.onToggleBorderBox}>border-box</button>
+										</p>
 									</div>
-				     			<div>
-										<button className={marginClass} onClick={this.onToggleMargin}>Set Margin</button>
-										<button className={paddingClass} onClick={this.onTogglePadding}>Set Pargin</button>
-										<button className={borderClass} onClick={this.onToggleBorder}>Set Border</button>
+									<div className="field has-addons">
+									  <p className="control is-label">
+									  	Style:
+									  </p>
+									  <p className="control">
+										<button className={marginClass} onClick={this.onToggleMargin}>Margin</button>
+										</p>
+									  <p className="control">
+										<button className={paddingClass} onClick={this.onTogglePadding}>Pargin</button>
+										</p>
+									  <p className="control">
+										<button className={borderClass} onClick={this.onToggleBorder}>Border</button>
+										</p>
 									</div>
 					     	</div>
 					    </div>

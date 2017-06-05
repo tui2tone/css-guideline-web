@@ -37,17 +37,53 @@ body {
 		text-transform: uppercase;
 	}
 
+	.field {
+		.is-label {
+			background-color: #333;
+			color: $white;
+			padding: 0 2em;
+			font-size: 1.2em;
+			@include flex($align: center);
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+	}
+
 	button {
-		margin-right: 6px;
-		padding: 0.8em 1.2em;
-		font-size: 1em;
-		height: auto !important; 
-		margin-bottom: 6px;
+		padding: 1em 1.4em;
+		font-size: 1.2em;
+		height: auto !important;
+		border: 1px solid #FFF; 
+		margin :0;
+		display: block;
+		border-left: 1px solid #EEE;
+		position: relative;
+		border-radius: 0;
+		font-weight: 400;
 		&.is-active {
 			background-color: #2ba84a;
 			border: 1px solid #2ba84a;
+			border-left: 1px solid #FFF;
 			color: $white;
 			box-shadow: none;
+
+			&:after {
+				opacity: 0.1;
+			}
+		}
+
+		&:after {
+			position: absolute;
+			left: 50%;
+			top: 70%;
+			transform: translate(-50%, -50%);
+			width: 1.4em;
+			height: 1.4em;
+			font-family: FontAwesome;
+   		content: "\f00c";
+   		font-size: 4em;
+			display: block;
+			opacity: 0;
 		}
 	}
 }

@@ -2,19 +2,114 @@ import React, { Component } from 'react';
 import Highlight from 'react-highlight';
 import cx from 'classnames';
 
-class Display extends Component {
+class Position extends Component {
 
 	constructor(props) {
 		super(props);
 		
 		this.state = {
+			mode: 'block'
 		}	
+
+		this.onToggleBlock = this.onToggleBlock.bind(this)
+		this.onToggleInline = this.onToggleInline.bind(this)
+		this.onToggleInlineBlock = this.onToggleInlineBlock.bind(this)
 	}
 
+
+	onToggleBlock() {
+		this.setState({ mode: 'block' })
+	}
+
+	onToggleInline() {
+		this.setState({ mode: 'inline' })
+	}
+
+	onToggleInlineBlock() {
+		this.setState({ mode: 'inlineBlock' })
+	}
+
+	getContent(mode) {
+		switch(mode) {
+			case 'block':
+				return 'display: block;'
+			case 'inline':
+				return 'display: inline;'
+			case 'inlineBlock':
+				return 'display: inline-block;'
+		}
+	}
+
+	getBrowserContent() {
+		const { mode } = this.state
+		const boxClass = cx('display-box', { 'is-block': mode == 'block', 'is-inline': mode == 'inline', 'is-inline-block': mode == 'inlineBlock' })
+
+
+		if(mode === 'inline') {
+			return <div className="browser">
+				<span className="display-inline">Lorem ipsum dolor sit amet</span>
+				<span className="display-inline">consectetur adipiscing elit,</span>
+				<span className="display-inline">sed do eiusmod tempor incididunt</span>
+				<span className="display-inline">ut labore et dolore magna aliqua.</span>
+				<span className="display-inline">Ut enim ad minim veniam, quis nostrud</span>
+				<span className="display-inline">exercitation ullamco</span>
+				<span className="display-inline">Lorem ipsum dolor sit amet</span>
+				<span className="display-inline">consectetur adipiscing elit,</span>
+				<span className="display-inline">sed do eiusmod tempor incididunt</span>
+				<span className="display-inline">ut labore et dolore magna aliqua.</span>
+				<span className="display-inline">Ut enim ad minim veniam, quis nostrud</span>
+				<span className="display-inline">exercitation ullamco</span>
+			</div>
+		}
+		return <div className="browser">
+						<div className={boxClass}>
+							<div className="display-inner">Box 1</div>
+						</div>
+						<div className={boxClass}>
+							<div className="display-inner">Box 2</div>
+						</div>
+						<div className={boxClass}>
+							<div className="display-inner">Box 3</div>
+						</div>
+						<div className={boxClass}>
+							<div className="display-inner">Box 4</div>
+						</div>
+						<div className={boxClass}>
+							<div className="display-inner">Box 5</div>
+						</div>
+						<div className={boxClass}>
+							<div className="display-inner">Box 6</div>
+						</div>
+						<div className={boxClass}>
+							<div className="display-inner">Box 7</div>
+						</div>
+						<div className={boxClass}>
+							<div className="display-inner">Box 8</div>
+						</div>
+						<div className={boxClass}>
+							<div className="display-inner">Box 9</div>
+						</div>
+						<div className={boxClass}>
+							<div className="display-inner">Box 10</div>
+						</div>
+						<div className={boxClass}>
+							<div className="display-inner">Box 5</div>
+						</div>
+					</div>
+	}
+
+
 	render() {
+		const { mode } = this.state
+		const blockClass = cx('button', { 'is-active':  mode == 'block' })
+		const inlineClass = cx('button', { 'is-active':  mode == 'inline' })
+		const inlineBlockClass = cx('button', { 'is-active':  mode == 'inlineBlock' })
+
+		const highlightContent = this.getContent(mode)
+		const browserContent = this.getBrowserContent(mode)
 
 		return (
-			<section className="hero is-fullheight is-position">
+			<section className="hero is-fullheight is-display">
 			  <div className="hero-body">
 			    <div className="container">
 			    	<div className="columns">
@@ -22,17 +117,30 @@ class Display extends Component {
 					      <h1 className="title">
 					        Display
 					      </h1>
-					      <h1 className="subtitle">
-					        Where element should be place in
-					      </h1>
+					      <h2 className="subtitle">
+					        How relate with same level elements
+					      </h2>
 								<ul className="list">
 									<li>Block</li>
 									<li>Inline</li>
-									<li>Inline-block</li>
+									<li>InlineBlock</li>
 								</ul>
 					     	<div className="action">
-				     			<h4>Action</h4>
-					     	</div>
+									<div className="field has-addons">
+									  <p className="control is-label">
+									  	display:
+									  </p>
+									  <p className="control">
+											<button className={inlineClass} onClick={this.onToggleInline}>inline</button>
+										</p>
+									  <p className="control">
+											<button className={blockClass} onClick={this.onToggleBlock}>block</button>
+										</p>
+									  <p className="control">
+											<button className={inlineBlockClass} onClick={this.onToggleInlineBlock}>inline-block</button>
+										</p>
+									</div>
+								</div>
 					    </div>
 				  		<div className="column is-text-centered">
 				  			<div className="browser-container">
@@ -41,9 +149,9 @@ class Display extends Component {
 				  					<div className="circle"></div>
 				  					<div className="circle"></div>
 				  				</div>
-				  				<div className="browser">
-				  				</div>
+				  				{browserContent}
 					      	<Highlight className="css">
+					      		{highlightContent}
 					      	</Highlight>
 				  			</div>
 				  		</div>
@@ -56,4 +164,4 @@ class Display extends Component {
 	}
 }
 
-export default Display;
+export default Position;

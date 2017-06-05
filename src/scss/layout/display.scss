@@ -1,0 +1,40 @@
+.is-display {
+	background-color: #EEE;
+
+	.browser {
+		padding-top: 5vh;
+		padding-left: 5px;
+		padding-right: 5px;
+		padding-bottom: 5px;
+	}
+	.display-box {
+		padding: 5px;
+
+		.display-inner {
+			background-color: #EEE;
+			padding: 10px;
+			min-width: 50px;
+			text-align: center;
+		}
+		&.is-block {
+			display: block;
+		}
+
+		&.is-inline {
+			display: inline;
+
+			.display-inner {
+				display: inline;
+			}
+		}
+
+		&.is-inline-block {
+			display: inline-block;
+		}
+	}
+
+	.display-inline {
+		background-color: #EEE;
+		margin: 2px;
+	}
+}
