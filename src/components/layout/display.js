@@ -86,15 +86,6 @@ class Position extends Component {
 						<div className={boxClass}>
 							<div className="display-inner">Box 8</div>
 						</div>
-						<div className={boxClass}>
-							<div className="display-inner">Box 9</div>
-						</div>
-						<div className={boxClass}>
-							<div className="display-inner">Box 10</div>
-						</div>
-						<div className={boxClass}>
-							<div className="display-inner">Box 5</div>
-						</div>
 					</div>
 	}
 
@@ -113,35 +104,20 @@ class Position extends Component {
 			  <div className="hero-body">
 			    <div className="container">
 			    	<div className="columns">
-				  		<div className="column">
+				  		<div className="column is-5">
 					      <h1 className="title">
 					        Display
 					      </h1>
 					      <h2 className="subtitle">
 					        How relate with same level elements
 					      </h2>
-								<ul className="list">
-									<li>Block</li>
-									<li>Inline</li>
-									<li>InlineBlock</li>
-								</ul>
-					     	<div className="action">
-									<div className="field has-addons">
-									  <p className="control is-label">
-									  	display:
-									  </p>
-									  <p className="control">
+					     	<div className="group">
 											<button className={inlineClass} onClick={this.onToggleInline}>inline</button>
-										</p>
-									  <p className="control">
 											<button className={blockClass} onClick={this.onToggleBlock}>block</button>
-										</p>
-									  <p className="control">
 											<button className={inlineBlockClass} onClick={this.onToggleInlineBlock}>inline-block</button>
-										</p>
-									</div>
 								</div>
 					    </div>
+				  		<div className="column is-1"></div>
 				  		<div className="column is-text-centered">
 				  			<div className="browser-container">
 				  				<div className="browser-header">

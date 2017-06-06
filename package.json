@@ -8,13 +8,16 @@
     "bulma": "^0.4.2",
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
+    "he": "^1.1.1",
     "highlight.js": "^9.12.0",
     "icheck": "^1.0.2",
     "jquery": "^3.2.1",
+    "pretty": "^2.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-highlight": "^0.10.0",
     "react-icheck": "^0.3.8",
+    "react-modal": "^1.7.7",
     "scrollreveal": "^3.3.5"
   },
   "devDependencies": {

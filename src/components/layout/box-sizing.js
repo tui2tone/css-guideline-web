@@ -73,45 +73,19 @@ class BoxSizing extends Component {
 			  <div className="hero-body">
 			    <div className="container">
 			    	<div className="columns">
-				  		<div className="column">
+				  		<div className="column is-5">
 					      <h1 className="title">
 					        Box Sizing
 					      </h1>
 					      <h1 className="subtitle">
 					        How to calculate size of box model
 					      </h1>
-								<ul className="list">
-									<li>content-box</li>
-									<li>border-box</li>
-								</ul>
-					     	<div className="action">
-									<div className="field has-addons">
-									  <p className="control is-label">
-									  	Box-Sizing:
-									  </p>
-									  <p className="control">
-											<button className={contentBoxClass} onClick={this.onToggleContentBox}>content-box</button>
-										</p>
-									  <p className="control">
-											<button className={borderBoxClass} onClick={this.onToggleBorderBox}>border-box</button>
-										</p>
-									</div>
-									<div className="field has-addons">
-									  <p className="control is-label">
-									  	Style:
-									  </p>
-									  <p className="control">
-										<button className={marginClass} onClick={this.onToggleMargin}>Margin</button>
-										</p>
-									  <p className="control">
-										<button className={paddingClass} onClick={this.onTogglePadding}>Pargin</button>
-										</p>
-									  <p className="control">
-										<button className={borderClass} onClick={this.onToggleBorder}>Border</button>
-										</p>
-									</div>
+					     	<div className="group">
+									<button className={contentBoxClass} onClick={this.onToggleContentBox}>content-box</button>
+									<button className={borderBoxClass} onClick={this.onToggleBorderBox}>border-box</button>
 					     	</div>
 					    </div>
+				  		<div className="column is-1"></div>
 				  		<div className="column is-text-centered">
 				  			<div className="browser-container">
 				  				<div className="browser-header">
@@ -128,6 +102,23 @@ class BoxSizing extends Component {
 					      		{ content }
 					      	</Highlight>
 				  			</div>
+
+					     	<div className="action">
+									<div className="field has-addons">
+									  <p className="control is-label">
+									  	Style:
+									  </p>
+									  <p className="control">
+										<button className={marginClass} onClick={this.onToggleMargin}>Margin</button>
+										</p>
+									  <p className="control">
+										<button className={paddingClass} onClick={this.onTogglePadding}>Pargin</button>
+										</p>
+									  <p className="control">
+										<button className={borderClass} onClick={this.onToggleBorder}>Border</button>
+										</p>
+									</div>
+								</div>
 				  		</div>
 					  </div>
 			    </div>

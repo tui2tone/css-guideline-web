@@ -1,0 +1,10 @@
+.ReactModalPortal {
+	position: relative;
+	z-index: 10000;
+}
+
+.ReactModal__Content {
+	z-index: 1000 !important;
+	padding: 0 !important;
+	border: 0 !important;
+}
