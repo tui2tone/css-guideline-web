@@ -119,7 +119,7 @@ class BoxSizing extends Component {
 				  					<div className="circle"></div>
 				  					<div className="circle"></div>
 				  				</div>
-				  				<div className="browser">
+				  				<div className="browser is-overflow-visible">
 						  			<div className={boxClass}>
 						  				<div className="space">Space</div>
 						  			</div>

@@ -34,9 +34,89 @@ class Position extends Component {
 			case 'relative':
 				return 'position: relative;'
 			case 'absolute':
-				return 'position: absolute;\ntop: 0;\nleft: 0;\nwidth: 50%;'
+				return 'position: absolute;\ntop: 0;\nleft: 0;\nwidth: 80%;'
 			case 'fixed':
-				return 'position: fixed;\ntop: 0;\nleft: 0;\nwidth: 50%;'
+				return 'position: fixed;\ntop: 0;\nleft: 0;\nwidth: 100%;'
+		}
+	}
+
+	getBrowserContent(mode) {
+		switch(mode) {
+			case 'relative':
+				return <div className="browser">
+								<div className="position-container">
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="display-box">Box</div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+								</div>
+				  		</div>
+			case 'absolute':
+				return <div className="browser">
+								<div className="position-container">
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="display-box is-absolute">Box</div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+								</div>
+				  		</div>
+			case 'fixed':
+				return <div className="browser">
+								<div className="display-box is-fixed">Box</div>
+								<div className="position-container">
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+									<div className="line"></div>
+								</div>
+				  		</div>
 		}
 	}
 
@@ -48,6 +128,7 @@ class Position extends Component {
 		const fixedClass = cx('button', { 'is-active':  mode == 'fixed' })
 
 		const content = this.getContent(mode)
+		const browserContent = this.getBrowserContent(mode)
 
 		return (
 			<section className="hero is-fullheight is-position">
@@ -61,10 +142,9 @@ class Position extends Component {
 				  					<div className="circle"></div>
 				  					<div className="circle"></div>
 				  				</div>
-				  				<div className="browser">
-				  				</div>
+				  				{ browserContent }
 					      	<Highlight className="css">
-					      		{content}
+					      		{ content }
 					      	</Highlight>
 				  			</div>
 				  		</div>

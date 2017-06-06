@@ -25,6 +25,7 @@
 		min-height: 4vh;
 		@include flex($align: center);
 		padding: 0 0.5em;
+		z-index: 100;
 
 		.circle {
 			margin-left: 5px;
@@ -41,8 +42,12 @@
 		position: relative;
 		width: 100%;
 		padding-top: 4vh;
-		height: 50vh;
-		overflow: scroll;
+		height: 55vh;
+		// overflow: scroll;
+
+		&.is-overflow-visible {
+			// overflow: visible;
+		}
 	}
 
 	pre {

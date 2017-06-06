@@ -1,3 +1,45 @@
 .is-position {
 	background-color: #FFF;
+	
+	.position-container {
+		padding: 15px;
+		height: 100%;
+		position: relative;
+		overflow: scroll;
+
+		.line {
+			display: block;
+			height: 30px;
+			background-color: #EEE;
+			margin-bottom: 15px;
+			width: 100%;
+		}
+	}
+	.display-box {
+		display: block;
+		height: 120px;
+		background-color: $yellow;
+		margin-bottom: 15px;
+		width: 100%;
+		line-height: 120px;
+		vertical-align: middle;
+		color: #333;
+		text-align: center;
+		font-size: 1.4em;
+
+		&.is-absolute {
+			position: absolute;
+			top: 0vh;
+			left: 0;
+			width: 80%;
+		}
+		&.is-fixed {
+			position: absolute;
+			top: 4vh;
+			left: 0;
+			height: 80px;
+			line-height: 80px;
+			z-index: 60;
+		}
+	}
 }
