@@ -1,0 +1,12 @@
+.is-syntax {
+
+	.title {
+		color: $white;
+		font-size: 8em;
+		text-align: center;
+	}
+}
+
+@import './query';
+@import './pseudo';
+@import './property';
