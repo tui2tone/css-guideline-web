@@ -6,6 +6,8 @@ import BoxSizing from './box-sizing'
 import Position from './position'
 import Display from './display'
 import Float from './float'
+import Overflow from './Overflow'
+import Flexbox from './flexbox'
 
 class Layout extends Component {
 
@@ -18,6 +20,8 @@ class Layout extends Component {
     		<Position />
     		<Display />
     		<Float />
+    		<Overflow />
+    		<Flexbox />
     	</div>
     )
   }
